@@ -1,10 +1,15 @@
 defmodule Greet do
+
+    @author "Slava"
+
     def start do
-        name = IO.gets "Put your name: "
-        name = name |> String.trim |> String.downcase
-        case name == "slava" do
-            true -> IO.puts "Wow! I made by #{String.capitalize(name)} too. Nice to meet you."
-            false -> IO.puts "Hi, #{String.capitalize(name)}"
+        name = IO.gets("Put your name: ") |> String.trim |> String.downcase |> String.capitalize
+        case name do
+            @author ->
+              IO.puts "Wow! I made by #{@author} too. Nice to meet you."
+
+            name ->
+              IO.puts "Hi, #{name}"
         end
     end
 end
